@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
 import StudentTableRow from "./StudentTableRow";
+import "./studentlist.css";
 
 export default class StudentList extends Component {
   constructor(props) {
@@ -34,14 +35,15 @@ export default class StudentList extends Component {
     return (
       <div className="table-wrapper">
         <Table striped bordered hover>
-          <thead>
+          <thead className="table">
             <tr>
-              <th>FName</th>
-
+              <th>Id</th>
+              <th>FirstName</th>
+              <th>Lname</th>
               <th>Email</th>
-              <th>username</th>
-              <th>created at</th>
-              <th>updated at</th>
+              <th>UserName</th>
+              <th>CreatedAt</th>
+              <th>UpdatedAt</th>
             </tr>
           </thead>
           <tbody>{this.DataTable()}</tbody>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
+import "./StudentTableRow.css";
 
 export default class StudentTableRow extends Component {
   constructor(props) {
@@ -25,7 +26,9 @@ export default class StudentTableRow extends Component {
   render() {
     return (
       <tr>
+        <td>{this.props.obj._id}</td>
         <td>{this.props.obj.name}</td>
+        <td>{this.props.obj.lname}</td>
         <td>{this.props.obj.email}</td>
         <td>{this.props.obj.rollno}</td>
         <td>{this.props.obj.createdAt}</td>

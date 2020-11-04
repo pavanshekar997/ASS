@@ -9,6 +9,7 @@ export default class CreateStudent extends Component {
 
     // Setting up functions
     this.onChangeStudentName = this.onChangeStudentName.bind(this);
+    this.onChangeStudentLname = this.onChangeStudentLname.bind(this);
     this.onChangeStudentEmail = this.onChangeStudentEmail.bind(this);
     this.onChangeStudentRollno = this.onChangeStudentRollno.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -16,6 +17,7 @@ export default class CreateStudent extends Component {
     // Setting up state
     this.state = {
       name: "",
+      lname: "",
       email: "",
       rollno: "",
     };
@@ -23,6 +25,9 @@ export default class CreateStudent extends Component {
 
   onChangeStudentName(e) {
     this.setState({ name: e.target.value });
+  }
+  onChangeStudentLname(e) {
+    this.setState({ lname: e.target.value });
   }
 
   onChangeStudentEmail(e) {
@@ -38,6 +43,7 @@ export default class CreateStudent extends Component {
 
     const studentObject = {
       name: this.state.name,
+      lname: this.state.lname,
       email: this.state.email,
       rollno: this.state.rollno,
     };
@@ -48,6 +54,7 @@ export default class CreateStudent extends Component {
 
     this.setState({
       name: "",
+      lname: "",
       email: "",
       rollno: "",
     });
@@ -58,11 +65,19 @@ export default class CreateStudent extends Component {
       <div className="form-wrapper">
         <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="Name">
-            <Form.Label>Name</Form.Label>
+            <Form.Label>FirstName</Form.Label>
             <Form.Control
               type="text"
               value={this.state.name}
               onChange={this.onChangeStudentName}
+            />
+          </Form.Group>
+          <Form.Group controlId="Name">
+            <Form.Label>LastName</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.lname}
+              onChange={this.onChangeStudentLname}
             />
           </Form.Group>
 
@@ -76,7 +91,7 @@ export default class CreateStudent extends Component {
           </Form.Group>
 
           <Form.Group controlId="Name">
-            <Form.Label>Roll No</Form.Label>
+            <Form.Label>UserName</Form.Label>
             <Form.Control
               type="text"
               value={this.state.rollno}

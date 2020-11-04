@@ -5,12 +5,18 @@ let studentSchema = new Schema(
   {
     name: {
       type: String,
+      required: true,
+    },
+    lname: {
+      type: String,
     },
     email: {
       type: String,
     },
     rollno: {
-      type: Number,
+      type: String,
+      required: true,
+      unique: true,
     },
   },
   {

@@ -100,7 +100,7 @@ export default class EditStudent extends Component {
           </Form.Group>
 
           <Form.Group controlId="Name">
-            <Form.Label>Roll No</Form.Label>
+            <Form.Label>UserName</Form.Label>
             <Form.Control
               type="text"
               value={this.state.rollno}
