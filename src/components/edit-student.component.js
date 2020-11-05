@@ -8,6 +8,7 @@ export default class EditStudent extends Component {
     super(props);
 
     this.onChangeStudentName = this.onChangeStudentName.bind(this);
+    this.onChangeStudentLName = this.onChangeStudentLName.bind(this);
     this.onChangeStudentEmail = this.onChangeStudentEmail.bind(this);
     this.onChangeStudentRollno = this.onChangeStudentRollno.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -41,6 +42,9 @@ export default class EditStudent extends Component {
   onChangeStudentName(e) {
     this.setState({ name: e.target.value });
   }
+  onChangeStudentLName(e) {
+    this.setState({ lname: e.target.value });
+  }
 
   onChangeStudentEmail(e) {
     this.setState({ email: e.target.value });
@@ -55,6 +59,7 @@ export default class EditStudent extends Component {
 
     const studentObject = {
       name: this.state.name,
+      lname: this.state.lname,
       email: this.state.email,
       rollno: this.state.rollno,
     };
@@ -90,21 +95,21 @@ export default class EditStudent extends Component {
             />
           </Form.Group>
 
+          <Form.Group controlId="Name">
+            <Form.Label>LastName</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.lname}
+              onChange={this.onChangeStudentLName}
+            />
+          </Form.Group>
+
           <Form.Group controlId="Email">
             <Form.Label>Email</Form.Label>
             <Form.Control
               type="email"
               value={this.state.email}
               onChange={this.onChangeStudentEmail}
-            />
-          </Form.Group>
-
-          <Form.Group controlId="Name">
-            <Form.Label>UserName</Form.Label>
-            <Form.Control
-              type="text"
-              value={this.state.rollno}
-              onChange={this.onChangeStudentRollno}
             />
           </Form.Group>
 
