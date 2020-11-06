@@ -18,6 +18,10 @@ let studentSchema = new Schema(
       required: true,
       unique: true,
     },
+    guide: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

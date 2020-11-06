@@ -12,6 +12,7 @@ export default class CreateStudent extends Component {
     this.onChangeStudentLname = this.onChangeStudentLname.bind(this);
     this.onChangeStudentEmail = this.onChangeStudentEmail.bind(this);
     this.onChangeStudentRollno = this.onChangeStudentRollno.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     // Setting up state
@@ -20,6 +21,7 @@ export default class CreateStudent extends Component {
       lname: "",
       email: "",
       rollno: "",
+      guide: " ",
     };
   }
 
@@ -37,6 +39,9 @@ export default class CreateStudent extends Component {
   onChangeStudentRollno(e) {
     this.setState({ rollno: e.target.value });
   }
+  handleChange(e) {
+    this.setState({ guide: e.target.value });
+  }
 
   onSubmit(e) {
     e.preventDefault();
@@ -46,6 +51,7 @@ export default class CreateStudent extends Component {
       lname: this.state.lname,
       email: this.state.email,
       rollno: this.state.rollno,
+      guide: this.state.guide,
     };
 
     axios
@@ -57,6 +63,7 @@ export default class CreateStudent extends Component {
       lname: "",
       email: "",
       rollno: "",
+      guide: "",
     });
   }
 
@@ -98,6 +105,18 @@ export default class CreateStudent extends Component {
               onChange={this.onChangeStudentRollno}
             />
           </Form.Group>
+
+          <select
+            value={this.state.selectValue}
+            onChange={this.handleChange}
+            id="dropdown"
+          >
+            <option value="N/A">N/A</option>
+            <option value="pavan">pavan</option>
+            <option value="aryan kapoor">aryan kapoor</option>
+            <option value="parii">pariii</option>
+            <option value="fu">fu</option>
+          </select>
 
           <Button variant="danger" size="lg" block="block" type="submit">
             Create Student

@@ -33,6 +33,7 @@ export default class StudentTableRow extends Component {
         <td>{this.props.obj.rollno}</td>
         <td>{this.props.obj.createdAt}</td>
         <td>{this.props.obj.updatedAt}</td>
+        <td>{this.props.obj.guide}</td>
         <td>
           <Link
             className="edit-link"

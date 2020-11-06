@@ -16,6 +16,7 @@ export default class StudentList extends Component {
     axios
       .get("http://localhost:4000/students/")
       .then((res) => {
+        console.log(res.data);
         this.setState({
           students: res.data,
         });
@@ -44,6 +45,7 @@ export default class StudentList extends Component {
               <th>UserName</th>
               <th>CreatedAt</th>
               <th>UpdatedAt</th>
+              <th>Guide</th>
             </tr>
           </thead>
           <tbody>{this.DataTable()}</tbody>
